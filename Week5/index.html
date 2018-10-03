@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>AI Assistance</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="form-wrap">
+        <div class="input">
+            <label for="text">Type your favorite color</label>
+            <input id ="color" type="text" name="text" autocomplete="off">
+        </div>
+        <svg class="line">
+        </svg>
+        <button onclick="showAnswer()" id="submit">Go</button>
+        <h1 id ="answer">   </h1>
+        
+    </div>
+
+
+<!--    for the animation-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg.js"></script>
+    <script src="script.js"></script> 
+<!--    for AI Assisatance-->
+    <script src="homework.js"></script> 
+</body>
+
+</html>
