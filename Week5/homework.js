@@ -3,7 +3,7 @@ console.log("Tinsley 10/1/2018");
 
 
 const question = [
-  ["yellow", "yellow is for warmth and inspiration to make people smile.", "I am not familiar with this color."],
+  ["yellow", "yellow is for warmth and inspiration to make people smile."],
   ["red", "red is a fading sunset on the horizon. "],
   ["blue", "blue smells like sea water;blue sound like the sound of waves"],
   ["pink", "What is pink? A rose is pink; By the fountain’s brink."],
@@ -25,15 +25,14 @@ function checkAnswer(input) {
 }
 
 
+
 function showAnswer() {
+    var undef = "I'm not familiar with this color";
     var showfeedback = checkAnswer();
-    if (checkAnswer() === undefined){
-        console.log("undefined");
-        alert("I'm not familiar with this color");
-        document.getElementById("answer").style.visibility = "hidden";
-    }else{
-    document.getElementById("answer").style.visibility = "visible";
-    document.getElementById("answer").innerHTML = showfeedback;
+    if (showfeedback === undefined){
+        showfeedback=undef;
     }
+    document.getElementById("answer").innerHTML = showfeedback;
+    
 
 }

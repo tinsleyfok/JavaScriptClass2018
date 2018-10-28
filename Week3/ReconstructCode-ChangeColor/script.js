@@ -26,6 +26,18 @@ changeColor();
 
 element.onclick=changeColor();
 
+let bl = document.getElementsByClassName("grid")[0];
+
+bl.addEventListener("mouseover", function(e){
+                    e.target.style.opacity = 0.5
+                    });
+bl.addEventListener("mouseout", function(e){
+                    e.target.style.opacity = 1
+                    });
+
+
+
+
 //Jquery version 
 
 //$(".block").each(function () {
@@ -39,14 +51,14 @@ element.onclick=changeColor();
 //});
 
 
-$(".block").mouseover(function () {
-    $(this).animate({
-        opacity: 0.8
-    }, 200);
-});
-
-$(".block").mouseout(function () {
-    $(this).animate({
-        opacity: 1
-    }, 200);
-});
+//$(".block").mouseover(function () {
+//    $(this).animate({
+//        opacity: 0.8
+//    }, 200);
+//});
+//
+//$(".block").mouseout(function () {
+//    $(this).animate({
+//        opacity: 1
+//    }, 200);
+//});

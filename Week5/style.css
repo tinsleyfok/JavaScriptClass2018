@@ -171,10 +171,4 @@ button:focus {
     visibility: visible;
 }
 
-#undef {
-    margin-top: 0%;
-    font-size: 25px;
-    color: white;
-    font-weight: 200;
-    visibility: hidden;
-}
+
