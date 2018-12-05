@@ -5,12 +5,14 @@ body {
     
     font-family: Tinos;
     letter-spacing: 1px;
+
 }
 
 #title {
     color: white;
     padding-left: 10px;
-    background-color: rgb(255, 255, 255, 0);
+    width:10%;
+    
 
 }
 
@@ -78,6 +80,5 @@ timeline
     z-index: -10;
 }
 
-.active {
-    display: block;
-}
+
+

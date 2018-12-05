@@ -1,12 +1,3 @@
-//jason
-
-
-
-
-
-
-
-
 console.log("Tinsley");
 
 //Timeline navigator 
@@ -41,16 +32,14 @@ for (i = 0; i < year_show.length; i++) {
 //    }
 //});
 
-
-
-
+//play music 
 const songlists = [{
-        name: "53 St Lexington Ave",
+        name: "Lexington Ave - 53rd St",
         year: 2,
-        url: "../data/51.mp3",
+        url: "data/51.mp3",
         //        location: [-73.96907237490204 40.75746830782865]
 }, {
-        name: "59 St Lexington Ave",
+        name: "Lexington Ave - 59th St",
         year: 1,
         url: "data/59.mp3",
         //        location: [-73.96737501711436 40.762708855394564]
@@ -60,19 +49,19 @@ const songlists = [{
         url: "data/Canal.mp3",
         //        location:[-74.0052290023424 40.72082400007119]
 }, {
-        name: "Jay St Metro Tech",
+        name: "Jay St - MetroTech",
         year: 4,
         url: "data/Jay.mp3",
         //        location: [-73.98721815267317 40.692470636847084]
 },
 
     {
-        name: "57 St",
+        name: "57th St",
         year: 5,
         url: "data/57.mp3",
         //        location: [-73.97736800085171 40.76408500081713]
 }, {
-        name: "14 St",
+        name: "14th St",
         year: 6,
         url: "data/14.mp3",
         //        location: [-74.00168999937027 40.740893000193296]
@@ -82,18 +71,18 @@ const songlists = [{
         url: "data/GrandCentral.mp3",
         //        location: [-73.98622899953202,40.755983000570076]
 }, {
-        name: "Hoyt-schermerhorn Sy",
+        name: "Hoyt - Schermerhorn Sts",
         year: 8,
         url: "data/Hoyt.mp3",
         //        location: [-73.98777189072918,40.74978939990011]
 },
     {
-        name: "Times Square",
+        name: "Times Sq - 42nd St",
         year: 9,
         url: "data/TimesSquare.mp3",
         //        location: [-73.92582299919906,40.761431998800546]
 }, {
-        name: "2nd Ave",
+        name: "Lower East Side - 2nd Ave",
         year: 10,
         url: "data/2.mp3",
         //        location:[-73.98807806807719,40.71868074219453]
@@ -109,17 +98,17 @@ const songlists = [{
         //        location:[-73.98995099881881,40.734673000996125]
 },
     {
-        name: "West4",
+        name: "W 4th St - Washington Sq (Lower)",
         year: 13,
         url: "data/West4.mp3",
         //        location: [-74.00049500225435 40.73233799774325]
 }, {
-        name: "Grand Central",
+        name: "Grand Central - 42nd St",
         year: 14,
         url: "data/GC.mp3",
         //        location: [-73.9767132992584 40.75180742981634]
 }, {
-        name: "Union Square",
+        name: "Union Sq - 14th St",
         year: 15,
         url: "data/UnionSquare.mp3",
         //        location:[-73.91038357033376,40.68285130087804]
@@ -130,56 +119,27 @@ const songlists = [{
         //        location: [-74.00974461517701 40.71256392680817]
 },
     {
-        name: "Columbus Circle",
+        name: "59th St - Columbus Circle",
         year: 17,
         url: "data/ColumbusCircle.mp3",
         //        location:[-73.98192900232715 40.76824700063689]
 }, {
-        name: "Penn Station",
+        name: "34th St - Penn Station",
         year: 18,
         url: "data/Lexington.mp3",
         //        location:[-73.99105699913983 40.75037300003949]
 }, {
-        name: "Broadway Lafayette",
+        name: "Broadway - Lafayette St",
         year: 19,
         url: "data/BL.mp3",
         //        location: [-73.99620399876055 40.725296998738045]
 }, {
-        name: "Atlantic Ave",
+        name: "Atlantic Av - Barclay's Center",
         year: 20,
         url: "data/Atlantic.mp3",
         //        location: [-73.97754993539385 40.68442016526762]
 },
   ];
-
-
-
-//Play song by station
-let gt = document.getElementsByClassName("track");
-let j;
-let n;
-let playsong = new Audio();
-
-for (j = 0; j < songlists.length; j++) {
-    gt[j].addEventListener("click", function (e) {
-        let trackyear = e.target.getAttribute('data-year');
-        console.log(trackyear);
-        for (n = 0; n < songlists.length; n++) {
-            let getarrayyear = songlists[n].year;
-            console.log(getarrayyear);
-            let audio = songlists[n].url;
-            let precent = songlists[n].loudness;
-            if (trackyear == getarrayyear) {
-                console.log(audio);
-                playsong.src = audio;
-                playsong.play();
-            }
-
-
-
-        }
-    });
-}
 
 
 
@@ -221,10 +181,17 @@ function drawData() {
             },
 
             paint: {
-                "circle-radius": {
-                    'base': 1,
-                    'stops': [[12, 2], [32, 80]]
-                },
+                "circle-radius": [
+                'match',
+                ['get', 'line'],
+                'Chinese', 15,
+                'Classical', 15,
+                'Jazz', 15,
+                'Pop', 15,
+                'Special', 15,
+                /* other */
+                    3
+            ],
 
 
                 'circle-color': [
@@ -232,170 +199,110 @@ function drawData() {
                 ['get', 'line'],
                 'Chinese', '#BC1D29',
                 'Classical', '#08B250',
-               
+                'Jazz', '#F77441',
+                'Pop', '#FFD91D',
+                'Special', '#6072D8',
+
                 /* other */
-                    '#ccc'
+                    '#FFA07A'
             ],
-                'circle-opacity': 0.8
+                'circle-opacity': [
+                'match',
+                ['get', 'line'],
+                'Chinese', 1,
+                'Classical', 1,
+                'Jazz', 1,
+                'Pop', 1,
+                'Special', 1,
+                /* other */
+                    0.3
+            ]
             }
         });
     });
 }
 
 
+//create pop-up information
+var popup = new mapboxgl.Popup({
+    closeButton: false,
+    closeOnClick: false
+});
+
+map.on('mouseenter', 'points', function (e) {
+    // Change the cursor style as a UI indicator.
+    map.getCanvas().style.cursor = 'pointer';
+
+    var coordinates = e.features[0].geometry.coordinates.slice();
+    var description = e.features[0].properties.name;
+    console.log(description);
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+
+    // Populate the popup and set its coordinates
+    // based on the feature found.
+    popup.setLngLat(coordinates)
+        .setHTML(description)
+        .addTo(map);
+});
+
+map.on('mouseleave', 'points', function () {
+    map.getCanvas().style.cursor = '';
+    popup.remove();
+});
+
+
+//click to zoom in/center/play song
+map.on('click', 'points', function (e) {
+    map.flyTo({
+        zoom: 15,
+        center: e.features[0].geometry.coordinates
+    });
+
+//click each feature to play song
+    let n;
+    let playsong = new Audio();
+
+    for (n = 0; n < songlists.length; n++) {
+        let stationname = e.features[0].properties.name;
+        console.log(stationname);
+        let songlistname = songlists[n].name;
+        console.log(songlistname);
+        let audio = songlists[n].url;
+        if (songlistname == stationname) {
+            console.log(audio);
+            playsong.src = audio;
+            playsong.play();
+        }
+    }
+
+});
 
 
 
-//
-//const colorMap = {
-//    blue: "#0039A6",
-//    orange: "#FF6319",
-//    yellow: "#FCCC0A",
-//    red: "#EE352E",
-//    green: "#00933C",
-//
-//};
-//
-//const linesMap = {};
-//lineData.features.map(
-//    line => (linesMap[line.properties.name] = line.properties.rt_symbol)
-//);
-//
-//const colorStops = Object.keys(linesMap).map(key => [
-//  key,
-//  colorMap[linesMap[key]]
-//]);
-//
-//const maxBounds = stops.features.reduce(
-//    (acc, stop) => {
-//        const [[swLon, swLat], [neLon, neLat]] = acc;
-//        const [lon, lat] = stop.geometry.coordinates;
-//        return [
-//      [Math.min(swLon, lon), Math.min(swLat, lat)],
-//      [Math.max(neLon, lon), Math.max(neLat, lat)]
-//    ];
-//    },
-//  [[-73.968, 40.733], [-73.868, 40.833]]
-//);
-//
-//mapboxgl.accessToken =
-//    "pk.eyJ1IjoidGluc2xleWZvayIsImEiOiJjam9rZzVibzMwNXVnM3FvNHZ5eHh4MWo4In0.iYRMgrgBQTlKgA9r9Pc4ng";
-//
-//if (!mapboxgl.supported()) {
-//    alert("Your browser does not support Mapbox GL");
-//} else {
-//    const map = new mapboxgl.Map({
-//        container: "map",
-//        style: "mapbox://styles/tinsleyfok/cjp9fszua8h3i2ro7p1cx41p9",
-//        center: [-73.968, 40.733],
-//        zoom: 13,
-//        maxBounds: [
-//      [maxBounds[0][0] - 0.1, maxBounds[0][1] - 0.1],
-//      [maxBounds[1][0] + 0.1, maxBounds[1][1] + 0.1]
-//    ]
-//    });
-//
-//    map.on("load", function () {
-//        map.addLayer({
-//            id: "trips",
-//            type: "line",
-//            source: {
-//                type: "geojson",
-//                data: lineData
-//            },
-//            layout: {
-//                "line-cap": "round",
-//                "line-join": "round"
-//            },
-//            paint: {
-//                "line-color": {
-//                    property: "name",
-//                    type: "categorical",
-//                    stops: colorStops
-//                },
-//                "line-width": {
-//                    base: 1,
-//                    stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
-//                }
-//            }
-//        });
-//
-//        map.addLayer({
-//            id: "stations",
-//            source: {
-//                type: "geojson",
-//                data: stops
-//            },
-//            type: "circle",
-//            paint: {
-//                "circle-radius": {
-//                    base: 1,
-//                    stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
-//                },
-//                "circle-color": "white",
-//                "circle-stroke-color": "black",
-//                "circle-stroke-width": {
-//                    base: 1,
-//                    stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
-//                }
-//            }
-//        });
-//
-//        map.addLayer({
-//            id: "stations-label",
-//            source: "stations",
-//            type: "symbol",
-//            paint: {
-//                "text-color": "white",
-//                "text-halo-color": "black",
-//                "text-halo-width": 1,
-//                "text-halo-blur": 4
-//            },
-//            layout: {
-//                "text-font": ["Open Sans Regular"],
-//                "text-field": "{name} ({line})",
-//                "text-size": {
-//                    base: 12,
-//                    stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
-//                },
-//                "text-anchor": "right",
-//                "text-offset": [-1.5, 0]
-//            }
-//        });
-//    });
-//
-// 
-//}
+//Play song by station
+let gt = document.getElementsByClassName("track");
+let j;
+let n;
+let playsong = new Audio();
 
-
-//map.on('load', function () {
-//
-//    map.addLayer({
-//        'id': 'points',
-//        'type': 'circle',
-//        'source': {
-//            type: 'vector',
-//            url: 'mapbox://styles/tinsleyfok/cjpa6m2ln2z8b2rtfn9spvo3x'
-//        },
-//        'source-layer': 'sf2010',
-//        'paint': {
-//            // make circles larger as the user zooms from z12 to z22
-//            'circle-radius': {
-//                'base': 1.75,
-//                'stops': [[12, 2], [22, 180]]
-//            },
-// color circles by ethnicity, using a match expression
-//            // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-//            'circle-color': "#fff"
-////            [
-////                'match',
-////                ['get', 'ethnicity'],
-////                'White', '#fbb03b',
-////                'Black', '#223b53',
-////                'Hispanic', '#e55e5e',
-////                'Asian', '#3bb2d0',
-////                /* other */ '#ccc'
-////            ]
-//        }
-//    });
-//});
+for (j = 0; j < songlists.length; j++) {
+    gt[j].addEventListener("click", function (e) {
+        let trackyear = e.target.getAttribute('data-year');
+        console.log(trackyear);
+        for (n = 0; n < songlists.length; n++) {
+            let getarrayyear = songlists[n].year;
+            console.log(getarrayyear);
+            let audio = songlists[n].url;
+            if (trackyear == getarrayyear) {
+                console.log(audio);
+                playsong.src = audio;
+                playsong.play();
+            }
+        }
+    });
+}

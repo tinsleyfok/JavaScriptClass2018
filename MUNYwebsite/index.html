@@ -4,20 +4,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Music Under New York</title>
+    <title>BuskingMusic Under New York</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
 
 </head>
-
 <body>
+<!--    change the pop-up style-->
+    <style>   
+    .mapboxgl-popup-content {
+      background: rgb(0,0,0,0.4);
+        color:white;
+        max-width: 400px;
+        font: 12px;
+        font-family: Tinos;
+    }  
+    </style>
 
     <div id=title>
-  
+            Busking  <br />
             Music Under <br />
             New York
     </div>
@@ -32,10 +41,10 @@
             </div>
             <div class="station">
 
-                <p class="track" data-year="1">59 St Lexington Ave</p>
-                <p class="track" data-year="2">51 St Lexington Ave</p>
+                <p class="track" data-year="1">Lexington Ave - 59th St</p>
+                <p class="track" data-year="2">Lexington Ave - 53rd St</p>
                 <p class="track" data-year="3">Canal St</p>
-                <p class="track" data-year="4">Jay St Metro Tech</p>
+                <p class="track" data-year="4">Jay St - MetroTech</p>
             </div>
         </li>
 
@@ -44,10 +53,10 @@
                 Classical Music
             </div>
             <div class="station">
-                <p class="track" data-year="5">57 St</p>
-                <p class="track" data-year="6">14 St</p>
+                <p class="track" data-year="5">57th St</p>
+                <p class="track" data-year="6">14th St</p>
                 <p class="track" data-year="7">Metropolitan Ave</p>
-                <p class="track" data-year="8">Hoyt-schermerhorn </p>
+                <p class="track" data-year="8">Hoyt-Schermerhorn St </p>
             </div>
         </li>
 
@@ -56,7 +65,7 @@
                 Jazz
             </div>
             <div class="station">
-                <p class="track" data-year="9">Times Square</p>
+                <p class="track" data-year="9">Times Sq -42nd St</p>
                 <p class="track" data-year="10">2nd Ave<p>
                         <p class="track" data-year="11">Bleecker St</p>
                         <p class="track" data-year="12">Bedford Ave</p>
