@@ -1,0 +1,24 @@
+{
+  "type": FeatureCollection",
+  "features": [
+    
+    {"type":"Feature",
+    "properties":{
+    "name":"Canal St", 
+    "url":"http://web.mta.info/nyct/service/",
+    "line":"4-6-6 Express",
+    "objectid":"2",
+    "notes":"4 nights, 6-all times, 
+    6 Express-weekdays AM southbound, PM northbound"},
+    "geometry":
+    {"type":"Point",
+    "coordinates":[-74.00019299927328,40.71880300107709]
+    }},
+    
+    {"type":"Feature","properties":{"name":"Jay St - MetroTech","url":"http://web.mta.info/nyct/service/","line":"A-C-F","objectid":"368","notes":"A,F-all times, C-all times exc nights"},"geometry":{"type":"Point","coordinates":[-73.98721815267317,40.692470636847084]}},
+    
+    {"type":"Feature","properties":{"name":"Lexington Ave - 59th St","url":"http://web.mta.info/nyct/service/","line":"4-5-6-6 Express","objectid":"49","notes":"4,6-all times, 5-all times exc nights, 6 Express-weekdays AM southbound, PM northbound"},"geometry":{"type":"Point","coordinates":[-73.9679670004732,40.762526000304575]}},
+    
+    {"type":"Feature","properties":{"name":"Lexington Ave - 53rd St","url":"http://web.mta.info/nyct/service/","line":"E-M","objectid":"143","notes":"E-all times, M-weekdays and evenings"},"geometry":{"type":"Point","coordinates":[-73.96907237490204,40.75746830782865]}}
+    
+    ]}

@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Tinos");
+
+html,
+body {
+    
+    font-family: Tinos;
+    letter-spacing: 1px;
+}
+
+#title {
+    color: white;
+    padding-left: 10px;
+    background-color: rgb(255, 255, 255, 0);
+
+}
+
+
+/*
+timeline
+*/
+
+.genres {
+    color: white;
+    font-style: italic;
+    position: absolute;
+    top: 40%;
+    left: -2%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+
+}
+
+.genres li {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 0 10px 50px;
+}
+
+.train:hover {
+    text-decoration: line-through;
+}
+
+
+
+.train {
+    font-size: .9em;
+    color: white;
+    width: 100;
+
+
+}
+
+.genres p {
+    font-size: .8em;
+
+
+}
+
+
+.station {
+    display: none;
+    padding-left: 10px;
+}
+
+.station p:hover {
+    text-decoration: line-through;
+}
+
+/*map*/
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+.active {
+    display: block;
+}
