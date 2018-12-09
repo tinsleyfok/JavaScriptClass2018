@@ -26,8 +26,7 @@ timeline
     font-style: italic;
     position: absolute;
     top: 40%;
-    left: -2%;
-    list-style: none;
+    left: 0%;
     padding: 0;
     margin: 0;
     color: #fff;
@@ -38,12 +37,60 @@ timeline
     cursor: pointer;
     position: relative;
     padding: 10px 0 10px 50px;
+    list-style:none;
+}
+.genres li::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 13px;
+    left: 20px;
+    z-index: 2;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.genres li:nth-of-type(1)::before {
+  background-color: #BC1D29;
+}
+
+.genres li:nth-of-type(2)::before {
+  background-color: #08B250;
+}
+
+.genres li:nth-of-type(3)::before{
+  background-color: #D615E4;
+}
+
+.genres li:nth-of-type(4)::before {
+ background-color: #FFD91D;
+}
+
+.genres li:nth-of-type(5)::before {
+  background-color: #6072D8;
+}
+
+.genres li:nth-of-type(1) p.active{
+    color:#BC1D29;
+}
+.genres li:nth-of-type(2) p.active{
+    color:#08B250;
+}
+.genres li:nth-of-type(3) p.active{
+    color:#D615E4;
+}
+.genres li:nth-of-type(4) p.active{
+    color:#FFD91D;
+}
+.genres li:nth-of-type(5) p.active{
+    color:#6072D8;
 }
 
 .train:hover {
     text-decoration: line-through;
 }
-
 
 
 .train {
@@ -79,6 +126,8 @@ timeline
     width: 100%;
     z-index: -10;
 }
+
+
 
 
 

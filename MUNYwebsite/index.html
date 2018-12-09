@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>BuskingMusic Under New York</title>
+    <title>Music Under New York</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
@@ -13,38 +13,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
 
 </head>
+
 <body>
-<!--    change the pop-up style-->
-    <style>   
-    .mapboxgl-popup-content {
-      background: rgb(0,0,0,0.4);
-        color:white;
-        max-width: 400px;
-        font: 12px;
-        font-family: Tinos;
-    }  
+    <!--    change the pop-up style-->
+    <style>
+        .mapboxgl-popup-content {
+            background: rgb(0, 0, 0, 0.4);
+            color: white;
+            max-width: 400px;
+            font: 12px;
+            font-family: Tinos;
+        }
+
     </style>
 
     <div id=title>
-            Busking  <br />
-            Music Under <br />
-            New York
+        Music Under <br />
+        New York
     </div>
 
 
 
 
     <div class="genres">
-        <li>
-            <div class="train">
+           <li>
+            <div class="train" >
                 Chinese Folk
             </div>
-            <div class="station">
+            <div class="station" >
 
-                <p class="track" data-year="1">Lexington Ave - 59th St</p>
-                <p class="track" data-year="2">Lexington Ave - 53rd St</p>
-                <p class="track" data-year="3">Canal St</p>
-                <p class="track" data-year="4">Jay St - MetroTech</p>
+                <p class="track" data-name="Lexington Ave - 59th St">Lexington Ave - 59th St</p>
+                <p class="track" data-name="Lexington Ave - 53rd St">Lexington Ave - 53rd St</p>
+                <p class="track" data-name="Canal St">Canal St</p>
+                <p class="track" data-name="Jay St - MetroTech">Jay St - MetroTech</p>
             </div>
         </li>
 
@@ -52,11 +53,11 @@
             <div class="train">
                 Classical Music
             </div>
-            <div class="station">
-                <p class="track" data-year="5">57th St</p>
-                <p class="track" data-year="6">14th St</p>
-                <p class="track" data-year="7">Metropolitan Ave</p>
-                <p class="track" data-year="8">Hoyt-Schermerhorn St </p>
+            <div class="station" >
+                <p class="track" data-name="57th St">57th St</p>
+                <p class="track" data-name="14th St">14th St</p>
+                <p class="track" data-name="Metropolitan Ave">Metropolitan Ave</p>
+                <p class="track" data-name="Hoyt - Schermerhorn Sts">Hoyt-Schermerhorn Sts </p>
             </div>
         </li>
 
@@ -64,11 +65,11 @@
             <div class="train">
                 Jazz
             </div>
-            <div class="station">
-                <p class="track" data-year="9">Times Sq -42nd St</p>
-                <p class="track" data-year="10">2nd Ave<p>
-                        <p class="track" data-year="11">Bleecker St</p>
-                        <p class="track" data-year="12">Bedford Ave</p>
+            <div class="station" >
+                <p class="track" data-name="Times Sq - 42nd St">Times Sq - 42nd St</p>
+                <p class="track" data-name="Lower East Side - 2nd Ave">2nd Ave<p>
+                        <p class="track" data-name="Bleecker St">Bleecker St</p>
+                        <p class="track" data-name="Bedford Ave">Bedford Ave</p>
 
             </div>
         </li>
@@ -77,11 +78,11 @@
             <div class="train">
                 Pop Music
             </div>
-            <div class="station">
-                <p class="track" data-year="13">West 4 </p>
-                <p class="track" data-year=" 14">Grand Central</p>
-                <p class="track" data-year="15">Union Square</p>
-                <p class="track" data-year="16">World Trade Center</p>
+            <div class="station" >
+                <p class="track" data-name="W 4th St - Washington Sq (Lower)">West 4 </p>
+                <p class="track" data-name="Grand Central - 42nd St">Grand Central</p>
+                <p class="track" data-name="Union Sq - 14th St">Union Square</p>
+                <p class="track" data-name="World Trade Center">World Trade Center</p>
 
             </div>
         </li>
@@ -90,11 +91,11 @@
             <div class="train">
                 Special Instruments
             </div>
-            <div class="station">
-                <p class="track" data-year="17">Columbus Circle</p>
-                <p class="track" data-year="18">Penn Station</p>
-                <p class="track" data-year="19">Broadway Lafayette</p>
-                <p class="track" data-year="20">Atlantic Ave</p>
+            <div class="station" >
+                <p class="track" data-name="59th St - Columbus Circle">Columbus Circle</p>
+                <p class="track" data-name="34th St - Penn Station">Penn Station</p>
+                <p class="track" data-name="Broadway - Lafayette St">Broadway Lafayette</p>
+                <p class="track" data-name="Atlantic Av - Barclay's Center">Atlantic Ave</p>
             </div>
         </li>
     </div>
